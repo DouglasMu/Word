@@ -70,7 +70,7 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
     }
-
+/*
     private void RefreshWordItemFragment(String strWord) {
         WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
         wordItemFragment.refreshWordsList(strWord);
@@ -80,6 +80,6 @@ public class MainActivity3 extends AppCompatActivity {
         WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
         wordItemFragment.refreshWordsList();
     }
-
+*/
 
 }
