@@ -25,7 +25,6 @@ public class Main2Activity extends AppCompatActivity {
         webView=(WebView)findViewById(R.id.toutput);
         final Button submit=(Button)findViewById(R.id.submit);
         editText=(EditText)findViewById(R.id.tinput);
-       // tips=(TextView)findViewById(R.id.tips);
         b_return = (Button)findViewById(R.id.b);
 
 
@@ -39,13 +38,10 @@ public class Main2Activity extends AppCompatActivity {
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webSettings.setSaveFormData(false);
-        webSettings.setSavePassword(false);
         webSettings.setSupportZoom(false);
         submit.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                //tips.setVisibility(TextView.VISIBLE);
                 webView.setVisibility(WebView.VISIBLE);
                 tHandler.post(new Runnable(){
                     public void run(){

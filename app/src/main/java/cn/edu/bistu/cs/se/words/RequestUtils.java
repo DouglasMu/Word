@@ -15,8 +15,6 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Random;
 
-//import static com.vice.test.MainActivity.handler;
-
 
 public class RequestUtils {
     private static final String UTF8 = "utf-8";

@@ -2,8 +2,6 @@ package cn.edu.bistu.cs.se.words;
 
 import android.app.ListFragment;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -43,10 +41,6 @@ public class WordItemFragment extends ListFragment {
         return fragment;
     }
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public WordItemFragment() {
     }
 
@@ -58,9 +52,7 @@ public class WordItemFragment extends ListFragment {
 
         //为列表注册上下文菜单
         ListView mListView = (ListView) view.findViewById(android.R.id.list);
-      //  mListView.setDivider(new ColorDrawable(Color.BLACK));
         mListView.setDividerHeight(2); // 2 pixels height
-        //   mListView.setOnCreateContextMenuListener(this);
         registerForContextMenu(mListView);
         return view;
     }
@@ -69,8 +61,6 @@ public class WordItemFragment extends ListFragment {
     public void onAttach(Context context) {
         Log.v(TAG, "WordItemFragment::onAttach");
         super.onAttach(context);
-       // mListener = (OnFragmentInteractionListener) getActivity();
-
     }
 
     //更新单词列表，从数据库中找到所有单词，然后在列表中显示出来
