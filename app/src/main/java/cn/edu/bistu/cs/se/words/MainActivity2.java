@@ -66,7 +66,7 @@ public class MainActivity2 extends AppCompatActivity {
                 final String request = get_English.getText().toString();
                 WordsDB wordsDB = WordsDB.getWordsDB();
                 wordsDB.InsertUserSql(request, strMeaning, "");
-                Toast.makeText(MainActivity2.this, "add success!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity2.this, "添加成功!!", Toast.LENGTH_SHORT).show();
             }
         });
     }

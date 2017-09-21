@@ -10,14 +10,6 @@ import java.util.Map;
 
 import cn.edu.bistu.cs.se.words.wordcantract.Words;
 
-
-/**
- * 数据库操作类，主要实现对数据库的增删改查。
- * 增：增加新单词及其含义等
- * 删：删除单词
- * 改：修改单词
- * 查：查询单词
- */
 public class WordsDB {
     private static final String TAG = "myTag";
 

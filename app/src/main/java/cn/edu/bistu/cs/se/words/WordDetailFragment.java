@@ -12,10 +12,7 @@ import android.widget.TextView;
 
 import cn.edu.bistu.cs.se.words.wordcantract.Words;
 
-/**
- *横屏获取全部单词
- */
-public class WordDetailFragment extends Fragment {
+public class WordDetailFragment extends Fragment {     //横屏获取全部单词
 
     public static final String ARG_ID = "id";
 
@@ -32,7 +29,7 @@ public class WordDetailFragment extends Fragment {
     }
 
     public WordDetailFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
