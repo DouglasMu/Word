@@ -94,7 +94,7 @@ public class WordDetailFragment extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        public void onWordDetailClick(Uri uri);
+        void onWordDetailClick(Uri uri);
 
     }
 

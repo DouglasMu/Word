@@ -35,8 +35,7 @@ public class RequestUtils {
 
         //用于md5加密
         //int salt = random.nextInt(10000);
-        //本演示使用指定的随机数为1435660288
-        final int salt = 1435660288;
+        final int salt = 1435660288; //本演示使用指定的随机数为1435660288
 
         // 对appId+源文+随机数+token计算md5值
         //应该对 appid+q+salt+密钥 拼接成的字符串做MD5得到32位小写的sign。确保要翻译的文本q为UTF-8编码。

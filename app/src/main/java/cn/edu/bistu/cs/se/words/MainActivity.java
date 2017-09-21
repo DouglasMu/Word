@@ -229,9 +229,7 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
 
     }
 
-    /**
-     * 当用户在单词详细Fragment中单击时回调此函数
-     */
+
     @Override
     public void onWordDetailClick(Uri uri) {
 
@@ -256,12 +254,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
 
     //是否是横屏
     private boolean isLand(){
-        /*
-        Fragment fragment=getFragmentManager().findFragmentById(R.id.worddetail);
-        if(fragment==null)
-            return false;
-        return true;
-        */
 
         if(getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
             return true;

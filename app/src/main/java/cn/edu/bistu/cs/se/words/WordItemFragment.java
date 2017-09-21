@@ -158,11 +158,9 @@ public class WordItemFragment extends ListFragment {
         super.onListItemClick(l, v, position, id);
 
         if (null != mListener) {
-            //通知Fragment所在的Activity，用户单击了列表的position项
-            TextView textView = (TextView) v.findViewById(R.id.textId);
+            TextView textView = (TextView) v.findViewById(R.id.textId); //通知Fragment所在的Activity，用户单击了列表的position项
             if (textView != null) {
-                //将单词ID传过去
-                mListener.onWordItemClick(textView.getText().toString());
+                mListener.onWordItemClick(textView.getText().toString());//将单词ID传过去
             }
         }
     }
@@ -171,11 +169,11 @@ public class WordItemFragment extends ListFragment {
      * Fragment所在的Activity必须实现该接口，通过该接口Fragment和Activity可以进行通信
      */
     public interface OnFragmentInteractionListener {
-        public void onWordItemClick(String id);
+        void onWordItemClick(String id);
 
-        public void onDeleteDialog(String strId);
+        void onDeleteDialog(String strId);
 
-        public void onUpdateDialog(String strId);
+        void onUpdateDialog(String strId);
     }
 
 }
