@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
  */
 public class Words {
 
-   /*
+
    //单词列表项
    public static class WordItem {
         public String id;
@@ -25,7 +25,7 @@ public class Words {
         public String toString() {
             return word;
         }
-    }*/
+    }
 
     //每个单词的描述
     public static class WordDescription {

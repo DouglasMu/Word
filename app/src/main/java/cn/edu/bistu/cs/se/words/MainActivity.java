@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import cn.edu.bistu.cs.se.words.wordcantract.Words;
 
@@ -22,6 +23,13 @@ import cn.edu.bistu.cs.se.words.wordcantract.Words;
 public class MainActivity extends AppCompatActivity implements WordItemFragment.OnFragmentInteractionListener,
         WordDetailFragment.OnFragmentInteractionListener {
     private static final String TAG = "myTag";
+    public static boolean isEmpty(CharSequence str) {
+        if (str == null || str.length() == 0)
+            return true;
+        else
+            return false;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -68,10 +76,7 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 Intent intent=new Intent(MainActivity.this,MainActivity3.class);
                 startActivity(intent);
                 break;
-            case R.id.action_search3:
-                Intent intent2=new Intent(MainActivity.this,Main2Activity.class);
-                startActivity(intent2);
-                break;
+
         }
 
 
@@ -109,14 +114,18 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                         String strMeaning = ((EditText) tableLayout.findViewById(R.id.txtMeaning)).getText().toString();
                         String strSample = ((EditText) tableLayout.findViewById(R.id.txtSample)).getText().toString();
 
+                       if(isEmpty(strMeaning)==true||isEmpty(strWord)==true){
+                           Toast.makeText(MainActivity.this,"输入错误！！", Toast.LENGTH_LONG).show();
 
-                        //既可以使用Sql语句插入，也可以使用使用insert方法插入
-                        // InsertUserSql(strWord, strMeaning, strSample);
-                        WordsDB wordsDB=WordsDB.getWordsDB();
-                        wordsDB.InsertUserSql(strWord, strMeaning, strSample);
+                       }
+                        else{
+                           //既可以使用Sql语句插入，也可以使用使用insert方法插入
+                           WordsDB wordsDB=WordsDB.getWordsDB();
+                           wordsDB.InsertUserSql(strWord, strMeaning, strSample);
 
-                        //单词已经插入到数据库，更新显示列表
-                        RefreshWordItemFragment();
+                           //单词已经插入到数据库，更新显示列表
+                           RefreshWordItemFragment();
+                       }
 
 
                     }

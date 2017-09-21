@@ -28,9 +28,6 @@
         <activity
             android:name=".MainActivity3"
             android:label="百度翻译" />
-        <activity
-            android:name=".Main2Activity"
-            android:label="海词翻译" />
     </application>
 
 </manifest>
