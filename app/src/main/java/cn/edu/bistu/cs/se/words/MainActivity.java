@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //新增单词
+            public void onClick(View view) { //新增单词
+
                 InsertDialog();
             }
         });
@@ -65,12 +65,10 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
         int id = item.getItemId();
         switch (id) {
             case R.id.action_search:
-                //查找
-                SearchDialog();
+                SearchDialog(); //查找
                 return true;
             case R.id.action_insert:
-                //新增单词
-                InsertDialog();
+                InsertDialog();//新增单词
                 return true;
             case R.id.action_search2:
                 Intent intent=new Intent(MainActivity.this,MainActivity2.class);
@@ -106,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
         new AlertDialog.Builder(this)
                 .setTitle("新增单词")//标题
                 .setView(tableLayout)//设置视图
-                //确定按钮及其动作
+                   //确定按钮及其动作
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -130,15 +128,15 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
 
                     }
                 })
-                //取消按钮及其动作
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {  //取消按钮及其动作
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
                     }
                 })
-                .create()//创建对话框
-                .show();//显示对话框
+                .create()       //创建对话框
+                .show();        //显示对话框
 
 
     }
@@ -152,7 +150,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 //既可以使用Sql语句删除，也可以使用使用delete方法删除
                 WordsDB wordsDB=WordsDB.getWordsDB();
                 wordsDB.DeleteUseSql(strId);
-
                 //单词已经删除，更新显示列表
                 RefreshWordItemFragment();
             }
