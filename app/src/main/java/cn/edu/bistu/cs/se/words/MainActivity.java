@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 InsertDialog();
                 return true;
             case R.id.action_search2:
-                Intent intent=new Intent(MainActivity.this,MainActivity3.class);
+                Intent intent=new Intent(MainActivity.this,MainActivity2.class);
                 startActivity(intent);
                 break;
 

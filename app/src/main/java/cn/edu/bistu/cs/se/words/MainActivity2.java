@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity3 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     private String strMeaning;
     private EditText get_English;
     private TextView result_Ch;
@@ -19,7 +19,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main2);
         get_English = (EditText) findViewById(R.id.English);
         result_Ch = (TextView) findViewById(R.id.result);
         translate = (Button) findViewById(R.id.translate);
@@ -28,7 +28,7 @@ public class MainActivity3 extends AppCompatActivity {
 
         return3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity3.this, MainActivity.class);
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class MainActivity3 extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 } else {
-                    Toast.makeText(MainActivity3.this, "请输入要翻译的内容", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "请输入要翻译的内容", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -66,20 +66,8 @@ public class MainActivity3 extends AppCompatActivity {
                 final String request = get_English.getText().toString();
                 WordsDB wordsDB = WordsDB.getWordsDB();
                 wordsDB.InsertUserSql(request, strMeaning, "");
-                Toast.makeText(MainActivity3.this, "添加成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity2.this, "添加成功", Toast.LENGTH_SHORT).show();
             }
         });
     }
-/*
-    private void RefreshWordItemFragment(String strWord) {
-        WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
-        wordItemFragment.refreshWordsList(strWord);
-    }
-
-    private void RefreshWordItemFragment() {
-        WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
-        wordItemFragment.refreshWordsList();
-    }
-*/
-
 }
